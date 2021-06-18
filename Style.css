@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300");
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  overflow: hidden;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 35px;
+  user-select: none;
+}
+
+.alignCenter
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 900px;
+}
+/* .wrapper{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+   */
+  .link_wrapper{
+    position: relative;
+  }
+  
+  a{
+    position: relative;
+    bottom: 50%;
+    margin-bottom: 150%;
+    display: block;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #333;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid #333;
+    transition: all .35s;
+  }
+  
+  .icon{
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: all .35s;
+  }
+  
+  .icon svg{
+    width: 30px;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    transform: rotate(-45deg);
+    fill: #2ecc71;
+    transition: all .35s;
+  }
+  
+  a:hover{
+    width: 250px;
+    border: 3px solid #2ecc71;
+    background: transparent;
+    color: #2ecc71;
+  }
+  
+  a:hover + .icon{
+    border: 3px solid #2ecc71;
+    right: -25%;
+  }
+
+/* .startBtn
+{
+  position: absolute;
+  top: 50%;
+  position: relative;
+  height: 60px;
+  width: 200px;
+  border: none;
+  outline: none;
+  color: white;
+  background: #965e09;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  top: -300px;
+}
+.startBtn:before
+{
+  position: absolute;
+  content: '';
+  top: -2px;
+  left: -2px;
+  height: calc(100% + 4px);
+  width: calc(100% + 4px);
+  border-radius: 5px;
+  z-index: -1;
+  opacity: 0;
+  filter: blur(5px);
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background-size: 400%;
+  transition: opacity .3s ease-in-out;
+  animation: animate 20s linear infinite;
+}
+.startBtn:hover:before
+{
+  opacity: 1;
+}
+.startBtn:hover:active
+{
+  background: none;
+}
+.startBtn:hover:active:before
+{
+  filter: blur(2px);
+} */
+.tinyText
+{
+    font-size: 25px;
+}
+@keyframes animate 
+{
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.content 
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+  }
+  .loader-wrapper 
+  {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loader
+  {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+  }
+  .loader-inner 
+  {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+  @keyframes loader 
+  {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+  @keyframes loader-inner 
+  {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+  }
+
+  path 
+  {
+    fill: transparent;
+  }
+
+  text 
+  {
+    fill: #131c44;
+    user-select: none;
+  }
+
+  .sverdlogo 
+  {
+    /* margin: auto;
+    padding: auto; */
+    /* position: relative; */
+    /* left:40%; */
+    /* display: flex; */
+    position: absolute;
+    top: 50%;
+  }
+
+  .sverd
+  {
+      display: flex;
+      position: relative;
+      align-content: center;
+      justify-content: center;
+      top: -100px;
+  }
+  
+  .background 
+  { 
+     
+     background-image: url("vanlilje.gif");
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 100vw;
+     height: 100vh;
+                  
+  }
+  .background2 
+  {
+    background-image: url("Warrior.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    /* float: left; */
+  }
+  
+
+  .hp 
+  {
+    /* float: left; */
+    position: relative;
+    margin: 5vh 0 0 5vw;
+    display: absolute;
+    left: 2vw;
+  }
+
+ 
+
+ 

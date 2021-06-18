@@ -1,0 +1,83 @@
+function start() {
+
+    app.classList.add("body");
+    
+
+    html = `<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+    </div>`;
+    updateView();
+
+    
+    //Will wait for x amount of millisec before running whatever is
+    //inside the setTimeout function
+    setTimeout(function()
+    {        
+        html = `
+        <div >
+            <button class="gameBtn" onclick="fight()">Sloss</button>
+            <button class="gameBtn" onclick="shop()">Shop</button>  
+        </div>
+        `;
+        updateView();
+    }, 1500);
+}
+
+function shop() {
+    html = `
+    <div class="background2">
+    
+    <button class="gameBtn gameBtns">Buy HP potions</button>
+    
+    
+    
+    <button class="gameBtn gameBtns">Buy damage</button>
+    
+
+    <button class="gameBtn gameBtns">Buy maximum HP</button>
+    <button class="gameBtn gameBtns" onclick="start()">Tilbake</button><br/>
+    <img class="hp" src="hp_potion.png" alt="hp_potion width="65px" height="65px">
+    <img class="sword" src="swords.png" alt="hp_potion width="65px" height="65px">
+    </div>
+    `;
+    updateView();
+}
+
+
+
+function fight(){
+
+    html = `
+        <div >
+            <button class="gameBtn gameBtns" onclick="attack()">Attack</button>
+            <button class="gameBtn gameBtns" onclick="run()">Run</button>
+            <button class="gameBtn gameBtns"></button>
+            ${player.name} HP: ${player.hp}    ${enemy.name} HP: ${enemy.hp}</p>
+        </div>
+    `;
+    updateView();
+}
+
+function attack(){
+    enemy.hp != 0 ? enemy.hp = enemy.hp - player.dmg: "";
+    fight();
+    updateView();
+}
+
+// function enemyAttack() {
+//     let success = Math.floor(Math.random() * 100);
+//     success >= 80 ? fight() : => {
+//         player.hp -= enemy.dmg;
+//         fight();
+//     };
+// }
+
+function run(){
+    let success = Math.floor(Math.random() * 100);
+    success >= 95 ? start() : enemyAttack();
+}
+
+function subtractDmg(recipiant,reciever){
+    reciever.hp -= recipiant.dmg;
+    fight();
+}
