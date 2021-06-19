@@ -5,12 +5,12 @@ html = `
       <path id="curve" d="M100.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
       <text class="tinyText" width="500">
       <textPath xlink:href="#curve">
-          Super Dupre NPC Fighting Spill Ting!
+      ADD Some super awesome COOL title!!!!!
       </textPath>
       </text>
   </svg>
   <div class="sverd"> 
-  <img class="sverdlogo" src="sverd.png" alt="sverd" widht="200" height="200">
+  <img class="sverdlogo" src="samurai-head.png" alt="sverd" widht="400" height="400">
   </div>
   <div class="startpage alignCenter">
   <div onclick="start()">
@@ -30,24 +30,3 @@ updateView();
 function updateView() {
     app.innerHTML = html;
 }
-/*{ <svg viewBox="20 0 500 155">
-<path id="curve" d="M100.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-<text class="tinyText" width="500">
-<textPath xlink:href="#curve">
-    Super Dupre NPC Fighting Spill Ting!
-</textPath>
-</text>
-</svg> }*/
-//  <button onclick="start()" class="startBtn" type="button">
-//             Start!
-//         </button>
-
-// </div>
-// <div class="container">
-// <div class="red flame"></div>
-// <div class="orange flame"></div>
-// <div class="yellow flame"></div>
-// <div class="white flame"></div>
-// <div class="blue circle"></div>
-// <div class="black circle"></div>
-// </div>
