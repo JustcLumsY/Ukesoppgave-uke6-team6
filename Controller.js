@@ -37,6 +37,8 @@ function shop() {
     <img class="hp" src="hp_potion.png" alt="hp_potion width="65px" height="65px">
     <img class="sword" src="swords.png" alt="hp_potion width="65px" height="65px">
     <img class="maximumhp" src="maximumhp.png" alt="maximumhp width="65px" height="75px">
+    <img class="arrowleft" src="arrowleft.png" alt="arrowleft width="65px" height="75px">
+    <img class="Untitled" src="Untitled.png" alt="Untitled width="65px" height="15px">
     </div>
     `;
     updateView();
