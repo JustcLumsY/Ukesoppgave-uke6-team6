@@ -1,42 +1,40 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:300");
-*{
+*
+{
   margin: 0;
   padding: 0;
 }
-body{
-  overflow: hidden;
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 35px;
-  user-select: none;
-}
 
-.alignCenter
-{
+  body
+  {
+    overflow: hidden;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 35px;
+    user-select: none;
+  } 
+
+  .alignCenter
+  {
     display:flex;
     align-items: center;
     justify-content: center;
     height: 900px;
-}
-/* .wrapper{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
-   */
-  .link_wrapper{
+
+  .link_wrapper
+  {
     position: relative;
   }
   
-  a{
+  a
+  {
     position: relative;
     bottom: 50%;
-    margin-bottom: 150%;
+    margin-bottom: 200%;
     display: block;
     width: 250px;
     height: 50px;
     line-height: 50px;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-decoration: none;
     background: #333;
     text-align: center;
@@ -47,7 +45,8 @@ body{
     transition: all .35s;
   }
   
-  .icon{
+  .icon
+  {
     width: 50px;
     height: 50px;
     border: 3px solid transparent;
@@ -59,7 +58,8 @@ body{
     transition: all .35s;
   }
   
-  .icon svg{
+  .icon svg
+  {
     width: 30px;
     position: absolute;
     top: calc(50% - 15px);
@@ -69,76 +69,84 @@ body{
     transition: all .35s;
   }
   
-  a:hover{
+  a:hover
+  {
     width: 250px;
     border: 3px solid #2ecc71;
     background: transparent;
     color: #2ecc71;
   }
   
-  a:hover + .icon{
+  a:hover + .icon
+  {
     border: 3px solid #2ecc71;
     right: -25%;
   }
 
-/* .startBtn
-{
-  position: absolute;
-  top: 50%;
-  position: relative;
-  height: 60px;
-  width: 200px;
-  border: none;
-  outline: none;
-  color: white;
-  background: #965e09;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 20px;
-  font-family: 'Raleway', sans-serif;
-  top: -300px;
-}
-.startBtn:before
-{
-  position: absolute;
-  content: '';
-  top: -2px;
-  left: -2px;
-  height: calc(100% + 4px);
-  width: calc(100% + 4px);
-  border-radius: 5px;
-  z-index: -1;
-  opacity: 0;
-  filter: blur(5px);
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-  background-size: 400%;
-  transition: opacity .3s ease-in-out;
-  animation: animate 20s linear infinite;
-}
-.startBtn:hover:before
-{
-  opacity: 1;
-}
-.startBtn:hover:active
-{
-  background: none;
-}
-.startBtn:hover:active:before
-{
-  filter: blur(2px);
-} */
-.tinyText
-{
+  .gameBtn 
+  {   
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; */
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+
+  .gameBtn:hover, .gameBtn:focus 
+  {
+    color: #fff;
+    outline: 0;
+  } 
+
+  .gameBtn 
+  {
+    border-color: #3498db;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #22628d inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+  }
+
+  .gameBtn:hover 
+  {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  }
+
+  .tinyText
+  {
     font-size: 25px;
-}
-@keyframes animate 
-{
+    font-family: fantasy;
+  }
+
+  @keyframes animate 
+  {
   0% { background-position: 0 0; }
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
-}
+  }
 
-.content 
+  .content 
   {
     display: flex;
     justify-content: center;
@@ -146,6 +154,7 @@ body{
     width:100%;
     height:100%;
   }
+
   .loader-wrapper 
   {
     width: 100%;
@@ -158,6 +167,7 @@ body{
     justify-content: center;
     align-items: center;
   }
+
   .loader
   {
     display: inline-block;
@@ -167,6 +177,7 @@ body{
     border: 4px solid #Fff;
     animation: loader 2s infinite ease;
   }
+
   .loader-inner 
   {
     vertical-align: top;
@@ -175,6 +186,7 @@ body{
     background-color: #fff;
     animation: loader-inner 2s infinite ease-in;
   }
+
   @keyframes loader 
   {
     0% { transform: rotate(0deg);}
@@ -183,6 +195,7 @@ body{
     75% { transform: rotate(360deg);}
     100% { transform: rotate(360deg);}
   }
+
   @keyframes loader-inner 
   {
     0% { height: 0%;}
@@ -199,58 +212,96 @@ body{
 
   text 
   {
-    fill: #131c44;
+    fill: #e09d0b;
     user-select: none;
   }
 
   .sverdlogo 
   {
-    /* margin: auto;
-    padding: auto; */
-    /* position: relative; */
-    /* left:40%; */
-    /* display: flex; */
+    opacity: 0.8;
     position: absolute;
     top: 50%;
+    margin: -15vh;
   }
 
   .sverd
   {
-      display: flex;
-      position: relative;
-      align-content: center;
-      justify-content: center;
-      top: -100px;
+    display: flex;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    top: -100px;
   }
-  
+
+  .background1 
+  {
+    background-image: url("Assault.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;          
+  }
+
   .background 
   { 
-     
-     background-image: url("vanlilje.gif");
-     background-repeat: no-repeat;
-     background-size: cover;
-     width: 100vw;
-     height: 100vh;
-                  
+    background-image: url("vanlilje.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;                 
   }
+  
   .background2 
   {
-    background-image: url("Warrior.gif");
+    background-image: url("ShopSamurai.gif");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
     height: 100vh;
-    /* float: left; */
   }
-  
+
+  .background3 
+  {
+    background-image: url("Courtyard.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
 
   .hp 
   {
-    /* float: left; */
     position: relative;
-    margin: 5vh 0 0 5vw;
+    margin: 0vh 0 0 6vw;
     display: absolute;
-    left: 2vw;
+  }
+
+  .sword 
+  {
+    position: relative;
+    margin: 0vh 0 0 10vw;
+    display: absolute;
+  }
+
+  .shopIcon 
+  {
+    position: relative;
+    margin: 1vh 0 0 40vw;
+    display: absolute;
+  }
+
+  .fightIcon 
+  {
+    position: relative;
+    margin: 1vh 0 0 -27vw;
+    display: absolute;
+  }
+
+  .maximumhp 
+  {
+    position: relative;
+    margin: 1vh 0 0 10vw;
+    display: absolute;
   }
 
  
