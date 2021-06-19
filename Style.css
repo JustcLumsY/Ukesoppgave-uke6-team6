@@ -304,6 +304,19 @@
     display: absolute;
   }
 
- 
+ .arrowleft 
+  {
+    position: relative;
+    margin: 1vh 0 0 8vw;
+    display: absolute;
+  }
+
+  .Untitled 
+  {
+    position: relative;
+    margin: 1vh 0 0 37.5vw;
+    display: absolute;
+    top: -7.6ch;
+  }
 
  
