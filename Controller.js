@@ -14,30 +14,29 @@ function start() {
     setTimeout(function()
     {        
         html = `
-        <div >
-            <button class="gameBtn" onclick="fight()">Sloss</button>
-            <button class="gameBtn" onclick="shop()">Shop</button>  
+        <div class="background3">
+        <button class="BtnCourtY" onclick="fight()">Fight</button>
+        <button class="BtnCourtY" onclick="shop()">Shop</button><br/>
+        <img class="shopIcon" src="shopIcon.png" alt="shopIcon width="65px" height="65px">
+        <img class="fightIcon" src="fightIcon.png" alt="fightIcon width="65px" height="75px">
+        
+              
         </div>
         `;
         updateView();
-    }, 1500);
+    }, 1000);
 }
 
 function shop() {
     html = `
     <div class="background2">
-    
     <button class="gameBtn gameBtns">Buy HP potions</button>
-    
-    
-    
     <button class="gameBtn gameBtns">Buy damage</button>
-    
-
     <button class="gameBtn gameBtns">Buy maximum HP</button>
-    <button class="gameBtn gameBtns" onclick="start()">Tilbake</button><br/>
+    <button class="gameBtn gameBtns" onclick="start()">Courtyard</button><br/>
     <img class="hp" src="hp_potion.png" alt="hp_potion width="65px" height="65px">
     <img class="sword" src="swords.png" alt="hp_potion width="65px" height="65px">
+    <img class="maximumhp" src="maximumhp.png" alt="maximumhp width="65px" height="75px">
     </div>
     `;
     updateView();
@@ -48,7 +47,7 @@ function shop() {
 function fight(){
 
     html = `
-        <div >
+        <div class="background1">
             <button class="gameBtn gameBtns" onclick="attack()">Attack</button>
             <button class="gameBtn gameBtns" onclick="run()">Run</button>
             <button class="gameBtn gameBtns"></button>
