@@ -34,7 +34,6 @@
     width: 250px;
     height: 50px;
     line-height: 50px;
-    /* font-weight: bold; */
     text-decoration: none;
     background: #333;
     text-align: center;
@@ -94,10 +93,6 @@
     border-radius: 0.6em;
     color: #e74c3c;
     cursor: pointer;
-    /* display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; */
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -216,7 +211,7 @@
     user-select: none;
   }
 
-  .sverdlogo 
+  .samuraiHead 
   {
     opacity: 0.8;
     position: absolute;
@@ -269,6 +264,15 @@
     height: 100vh;
   }
 
+  .lostSite 
+  {
+    background-image: url("lostSite.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+
   .hp 
   {
     position: relative;
@@ -286,14 +290,14 @@
   .shopIcon 
   {
     position: relative;
-    margin: 1vh 0 0 40vw;
-    display: absolute;
+    margin: 1vh 0 0 35.5vw
+    
   }
 
   .fightIcon 
   {
     position: relative;
-    margin: 1vh 0 0 -27vw;
+    margin: 1vh 0 0 -25vw;
     display: absolute;
   }
 
@@ -304,7 +308,7 @@
     display: absolute;
   }
 
- .arrowleft 
+  .arrowleft 
   {
     position: relative;
     margin: 1vh 0 0 8vw;
@@ -318,5 +322,54 @@
     top: -0.3vh;
     position: absolute;
   }
+
+  .Player 
+  {
+    display: relative;
+    margin: 23vh 0 0 22vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+
+  .Enemy 
+  {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    float: right;
+    margin: 5vh 33vw 0 5vw;
+
+  }
+
+  .Status 
+  {
+    margin: 0vh 0 0 30px;
+    float: right;
+    FONT-FAMILY: fantasy;
+    COLOR: YELLOW;
+  }
+
+  .attackicon 
+  {
+    margin: 1vh 0 0 15vw;
+  }
+
+  .PlayerHealth 
+  {
+    color: red;
+    margin: -1vh 59vw 0 -17vw;
+    float: right;
+    position: relative;
+  }
+
+  .EnemyHealth 
+  {
+    color: red;
+    float: right;
+    margin-right: -17vw;
+  }
+
+  .RunningIcon 
+  {
+    margin: 0 0 0 16.5vw;
+  }
+ 
 
  
