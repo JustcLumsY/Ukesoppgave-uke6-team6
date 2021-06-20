@@ -44,41 +44,127 @@ function shop() {
     updateView();
 }
 
-
-
 function fight(){
-
+    checkWin();
     html = `
         <div class="background1">
-            <button class="gameBtn gameBtns" onclick="attack()">Attack</button>
-            <button class="gameBtn gameBtns" onclick="run()">Run</button>
-            <button class="gameBtn gameBtns"></button>
-            ${player.name} HP: ${player.hp}    ${enemy.name} HP: ${enemy.hp}</p>
+            <button class="BtnCourtY" onclick="attack()">Attack</button>
+            <button class="BtnCourtY" onclick="run()">Run</button>
+            <!-- <button class="gameBtn gameBtns"></button> -->
+            <p class="Enemy">${enemy.name}'s</p> </br>
+            <p class="EnemyHealth"> HP: ${enemy.hp}</p>
+            <p class="Status">${status}</p>
+            <img class="attackicon" src="attackicon.png" alt="attackicon width="65px" height="85px">
+            <img class="RunningIcon" src="RunningIcon.png" alt="RunningIcon" width="65px" height="85px">
+            <p class="Player">${player.name}'s</p> 
+            <p class="PlayerHealth"> HP: ${player.hp}</p>
+          
         </div>
     `;
     updateView();
 }
 
+function lost(){
+    alert("hey"); 
+    html = `
+         <div class="lostSite">
+         ${player.hp}
+         </div>
+    `;
+     updateView();     
+}
+
+// Welcome to the spaghetti zone!
+
 function attack(){
-    enemy.hp != 0 ? enemy.hp = enemy.hp - player.dmg: "";
-    fight();
+    if(!canContinue()) return;
+
+    crit = Math.floor(Math.random() * 10);
+    crit >= 7 ? playerCrit():
+    enemy.hp != 0 ? enemy.hp = enemy.hp - player.dmg: '';
+    npcAttack();
+}
+
+function playerCrit(){
+    enemy.hp -= player.dmg * 2;
+    status = `${player.name} crit!`;
     updateView();
 }
 
-// function enemyAttack() {
-//     let success = Math.floor(Math.random() * 100);
-//     success >= 80 ? fight() : => {
-//         player.hp -= enemy.dmg;
-//         fight();
-//     };
-// }
-
 function run(){
+    if(!canContinue()) return;
+
     let success = Math.floor(Math.random() * 100);
-    success >= 95 ? start() : enemyAttack();
+    success >= 95 ? start() : npcAttack();
 }
 
-function subtractDmg(recipiant,reciever){
-    reciever.hp -= recipiant.dmg;
+function npcAttack() {
+    let success = Math.floor(Math.random() * 100);
+    if (enemy.hp != 0){
+    success <= 70 ? fightClearStatus() : status = `${enemy.name} missed!`;
+    updateView();
     fight();
+    }
+    if (player.hp <= 0){
+        checkWin();
+    }
+    updateView();
+    fight();
+}
+
+function subtractDmg(giver,reciever){
+
+    if(reciever.hp - giver.dmg < 0){
+        reciever.hp = 0;
+    }
+    else{
+        reciever.hp -= giver.dmg;
+    }
+    
+    updateView();
+    fight();
+}
+
+function checkWin() {
+    if(win || lose) return;
+
+    status = ``;
+    if(player.hp > 0 && enemy.hp <= 0){
+        status = `You win! <button class="gameBtn gameBtns" onclick="fightBack()">back</button>`;
+        win = true;
+        reset();
+    }
+    else if (player.hp <= 0) {
+        player.hp = 0;
+        status = `You lose! <button class="gameBtn gameBtns" onclick="start()">back</button>`;
+        lost();
+        lose = true;
+        reset();
+    }
+}
+
+function fightBack(){
+    if (player.hp == 0) player.hp = player.maxHp;
+    if (enemy.hp == 0) enemy.hp = enemy.maxHp;
+    start();
+}
+
+function fightClearStatus(){
+    subtractDmg(enemy, player);
+    status = '';
+}
+
+function reset(){
+    //gamne ends, reset variables
+    win = false;
+    lose = false;
+
+    //reset players
+    player.hp = player.maxHp;
+    enemy.hp = enemy.maxHp;
+}
+
+function canContinue(){
+    if(win || lose) return false;
+    return true;
 }
