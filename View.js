@@ -10,7 +10,7 @@ html = `
       </text>
   </svg>
   <div class="sverd"> 
-  <img class="sverdlogo" src="samurai-head.png" alt="sverd" widht="400" height="400">
+  <img class="samuraiHead" src="samurai-head.png" alt="samurai" widht="400" height="400">
   </div>
   <div class="startpage alignCenter">
   <div onclick="start()">
