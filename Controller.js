@@ -44,7 +44,7 @@ function shop() {
     updateView();
 }
 
-function fight(){
+function fight() {
     checkWin();
     html = `
         <div class="background1">
@@ -64,8 +64,8 @@ function fight(){
     updateView();
 }
 
-function lost(){
-    alert("hey"); 
+function lost() {
+    alert("Ling Ting Tong died!"); 
     html = `
          <div class="lostSite">
          ${player.hp}
@@ -155,7 +155,7 @@ function fightClearStatus(){
 }
 
 function reset(){
-    //gamne ends, reset variables
+    //game ends, reset variables
     win = false;
     lose = false;
 
