@@ -15,7 +15,7 @@ var player = {
 
 let enemy = {
     name: "Tore",
-    hp: 250,
-    maxHp: 250,
+    hp: 360,
+    maxHp: 360,
     dmg: 30
 }
