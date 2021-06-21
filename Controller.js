@@ -69,6 +69,8 @@ function lost() {
     // alert("Ling Ting Tong died!"); 
     let text = `
          <div class="lostSite">
+         You lose! <button class="gameBtn youLose" onclick="youLost()">back</button>
+         <h1> You got SUCKED into the void!! </h1>
          ${player.hp}
          </div>
     `;
@@ -169,4 +171,9 @@ function reset(){
 function canContinue(){
     if(win || lose) return false;
     return true;
+}
+
+function youLost(){
+    reset();
+    start();
 }
