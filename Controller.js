@@ -70,7 +70,7 @@ function lost() {
     let text = `
          <div class="lostSite">
          You lose! <button class="gameBtn youLose" onclick="youLost()">back</button>
-         <h1> You got SUCKED into the void!! </h1>
+         <h1> You got SUCKED into the void! </h1>
          ${player.hp}
          </div>
     `;
@@ -130,12 +130,11 @@ function subtractDmg(giver,reciever){
 
 function checkWin() {
     // if(win || lose) return;
-
+    
     if(player.hp > 0 && enemy.hp <= 0){
         status = `You win! <button class="gameBtn gameBtns" onclick="fightBack()">back</button>`;
         win = true;
         
-        reset();
     }
     if (player.hp <= 0) {
         player.hp = 0;
@@ -149,7 +148,7 @@ function checkWin() {
 
 function fightBack(){
     if (player.hp == 0) player.hp = player.maxHp;
-    if (enemy.hp == 0) enemy.hp = enemy.maxHp;
+    if (enemy.hp <= 0) enemy.hp = enemy.maxHp;
     start();
 }
 
