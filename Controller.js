@@ -45,7 +45,7 @@ function shop() {
 }
 
 function fight() {
-    checkWin();
+    
     html = `
         <div class="background1">
             <button class="BtnCourtY" onclick="attack()">Attack</button>
@@ -61,17 +61,18 @@ function fight() {
           
         </div>
     `;
-    updateView();
+    checkWin();
+    
 }
 
 function lost() {
-    alert("Ling Ting Tong died!"); 
-    html = `
+    // alert("Ling Ting Tong died!"); 
+    let text = `
          <div class="lostSite">
          ${player.hp}
          </div>
     `;
-     updateView();     
+     return text;     
 }
 
 // Welcome to the spaghetti zone!
@@ -126,21 +127,22 @@ function subtractDmg(giver,reciever){
 }
 
 function checkWin() {
-    if(win || lose) return;
+    // if(win || lose) return;
 
-    status = ``;
     if(player.hp > 0 && enemy.hp <= 0){
         status = `You win! <button class="gameBtn gameBtns" onclick="fightBack()">back</button>`;
         win = true;
+        
         reset();
     }
-    else if (player.hp <= 0) {
+    if (player.hp <= 0) {
         player.hp = 0;
-        status = `You lose! <button class="gameBtn gameBtns" onclick="start()">back</button>`;
-        lost();
+        // status = `You lose! <button class="gameBtn gameBtns" onclick="start()">back</button>`;
+        html = lost();
         lose = true;
-        reset();
+        // reset();
     }
+    updateView();
 }
 
 function fightBack(){
